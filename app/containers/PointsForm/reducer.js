@@ -5,6 +5,8 @@
  */
 
 import { fromJS } from 'immutable';
+import _ from 'lodash';
+
 import { TOGGLE_ACTION, fields } from './constants';
 
 export const initialState = fromJS(
@@ -16,12 +18,15 @@ export const initialState = fromJS(
         case 'toggle':
           defaultValue = false;
           break;
+
+        default:
+          return [];
       }
 
       return [field.id, defaultValue];
     })
     .fromPairs()
-    .value()
+    .value(),
 );
 
 function pointsFormReducer(state = initialState, action) {

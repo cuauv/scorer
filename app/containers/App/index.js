@@ -24,7 +24,7 @@ export default function App() {
         <div className="top-bar-left">
           <ul className="menu">
             <li className="menu-text">Site Title</li>
-            <li>
+            {/* <li>
               <a href="#">One</a>
             </li>
             <li>
@@ -32,7 +32,7 @@ export default function App() {
             </li>
             <li>
               <a href="#">Three</a>
-            </li>
+            </li> */}
           </ul>
         </div>
         <div className="top-bar-right">

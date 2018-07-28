@@ -21,8 +21,12 @@ function ToggleSlider(props) {
       />
       <label className="switch-paddle" htmlFor={props.name}>
         <span className="show-for-sr">{props.label}</span>
-        <span class="switch-active" aria-hidden="true">{props.onLabel}</span>
-        <span class="switch-inactive" aria-hidden="true">{props.offLabel}</span>
+        <span className="switch-active" aria-hidden="true">
+          {props.onLabel}
+        </span>
+        <span className="switch-inactive" aria-hidden="true">
+          {props.offLabel}
+        </span>
       </label>
     </div>
   );

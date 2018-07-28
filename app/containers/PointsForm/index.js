@@ -18,33 +18,39 @@ import reducer from './reducer';
 import { toggleAction } from './actions';
 import { fields } from './constants';
 
-
 function totalPoints(pointsform) {
-  return _.reduce(fields, (total, field) => {
-    const value = pointsform[field.id];
+  return _.reduce(
+    fields,
+    (total, field) => {
+      const value = pointsform[field.id];
 
-    switch (field.type) {
-      case "toggle":
-        return total + (value ? field.points : 0);
-    }
-  }, 0);
+      switch (field.type) {
+        case 'toggle':
+          return total + (value ? field.points : 0);
+
+        default:
+          return -1000;
+      }
+    },
+    0,
+  );
 }
 
 function PointsForm(props) {
   const makeFormRow = field => {
     switch (field.type) {
       case 'toggle':
-        const label = `${field.label} (${field.points})`;
-
         return (
           <div className="grid-x grid-padding-x" key={field.id}>
             <div className="cell small-6">
-              <label className="text-right" htmlFor={field.id}>{label}</label>
+              <label className="text-right" htmlFor={field.id}>
+                {`${field.label} (${field.points})`}
+              </label>
             </div>
             <div className="cell small-6">
               <ToggleSlider
                 value={props.pointsform[field.id]}
-                label={label}
+                label={`${field.label} (${field.points})`}
                 name={field.id}
                 offLabel="0"
                 onLabel={field.points}
@@ -60,7 +66,9 @@ function PointsForm(props) {
 
   return (
     <form>
-      <div className="stat text-center">Total Points: {totalPoints(props.pointsform)}</div>
+      <div className="stat text-center">
+        Total Points: {totalPoints(props.pointsform)}
+      </div>
       <div className="grid-container">{fields.map(makeFormRow)}</div>
     </form>
   );
@@ -73,6 +81,9 @@ const formShape = _(fields)
     switch (field.type) {
       case 'toggle':
         type = PropTypes.bool.isRequired;
+        break;
+
+      default:
         break;
     }
 
