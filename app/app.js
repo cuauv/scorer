@@ -41,11 +41,10 @@ import './global-styles';
 const initialState = {};
 let history;
 if (process.env.NODE_ENV === 'production') {
-  history = createHistory({ basename: "/scorer" });
-}
-else {
+  history = createHistory({ basename: '/scorer' });
+} else {
   history = createHistory();
-};
+}
 const store = configureStore(initialState, history);
 const MOUNT_NODE = document.getElementById('app');
 

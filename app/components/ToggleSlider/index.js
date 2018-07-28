@@ -36,14 +36,8 @@ ToggleSlider.propTypes = {
   value: PropTypes.bool.isRequired,
   name: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
-  onLabel: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number,
-  ]),
-  offLabel: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number,
-  ]),
+  onLabel: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  offLabel: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   onChange: PropTypes.func.isRequired,
 };
 
