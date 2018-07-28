@@ -29,7 +29,7 @@ function totalPoints(pointsform) {
           return total + (value ? field.points : 0);
 
         default:
-          return -1000;
+          return -1000000;
       }
     },
     0,

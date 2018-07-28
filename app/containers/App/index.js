@@ -23,7 +23,7 @@ export default function App() {
       <div className="top-bar">
         <div className="top-bar-left">
           <ul className="menu">
-            <li className="menu-text">Site Title</li>
+            <li className="menu-text">RoboSub Scorer</li>
             {/* <li>
               <a href="#">One</a>
             </li>
@@ -35,7 +35,7 @@ export default function App() {
             </li> */}
           </ul>
         </div>
-        <div className="top-bar-right">
+        {/* <div className="top-bar-right">
           <ul className="menu">
             <li>
               <input type="search" placeholder="Search" />
@@ -46,7 +46,7 @@ export default function App() {
               </button>
             </li>
           </ul>
-        </div>
+        </div> */}
       </div>
 
       <div className="grid-container">
