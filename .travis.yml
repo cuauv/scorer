@@ -20,6 +20,15 @@ notifications:
 
 after_success: 'npm run coveralls'
 
+deploy:
+  provider: pages
+  local-dir: build/
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  keep-history: true
+  on:
+    branch: master
+
 cache:
   yarn: true
   directories:
