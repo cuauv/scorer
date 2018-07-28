@@ -1,13 +1,14 @@
-import { defaultAction } from '../actions';
-import { DEFAULT_ACTION } from '../constants';
+import { toggleAction } from '../actions';
+import { TOGGLE_ACTION } from '../constants';
 
 describe('PointsForm actions', () => {
-  describe('Default Action', () => {
-    it('has a type of DEFAULT_ACTION', () => {
+  describe('Toggle Action', () => {
+    it('has a type of TOGGLE_ACTION', () => {
       const expected = {
-        type: DEFAULT_ACTION,
+        type: TOGGLE_ACTION,
+        id: 'id',
       };
-      expect(defaultAction()).toEqual(expected);
+      expect(toggleAction('id')).toEqual(expected);
     });
   });
 });
