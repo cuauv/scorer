@@ -15,7 +15,7 @@ module.exports = require('./webpack.base.babel')({
   output: {
     filename: '[name].[chunkhash].js',
     chunkFilename: '[name].[chunkhash].chunk.js',
-    publicPath: '',
+    publicPath: '/scorer/',
   },
 
   optimization: {
@@ -50,7 +50,7 @@ module.exports = require('./webpack.base.babel')({
     // assets manipulations and do leak its manipulations to HtmlWebpackPlugin
     new OfflinePlugin({
       relativePaths: false,
-      publicPath: '/',
+      publicPath: '/scorer/',
       appShell: '/',
 
       // No need to cache .htaccess. See http://mxs.is/googmp,

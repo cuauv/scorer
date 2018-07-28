@@ -51,7 +51,7 @@ export default function App() {
 
       <div className="grid-container">
         <Switch>
-          <Route exact path="/" component={HomePage} />
+          <Route path="/" component={HomePage} />
           <Route component={NotFoundPage} />
         </Switch>
       </div>
