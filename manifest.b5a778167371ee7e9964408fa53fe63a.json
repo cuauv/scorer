@@ -1,0 +1,67 @@
+{
+  "icons": [
+    {
+      "src": "/scorer/icon_512x512.f7b1d7a83a904f6536998cbd43123f8c.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/scorer/icon_384x384.68766687f18eb088ce014b9f8c7c66a4.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "/scorer/icon_192x192.d726ed08ab2b8dd5e99634ecd7f174a7.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/scorer/icon_180x180.395a2b49dc580d9194984dad7dcea3ee.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/scorer/icon_167x167.71d8c79372465e6017ca4307dc268d00.png",
+      "sizes": "167x167",
+      "type": "image/png"
+    },
+    {
+      "src": "/scorer/icon_152x152.0d04ddf2ccc4f8165da424a973ecc38f.png",
+      "sizes": "152x152",
+      "type": "image/png"
+    },
+    {
+      "src": "/scorer/icon_144x144.3ef3e8437e4181888da719cb3f1d81c9.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "/scorer/icon_128x128.a23bc21481df96905c14c1adc6b150b7.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "/scorer/icon_120x120.61b282bc0a9684186f0f4af3b923b323.png",
+      "sizes": "120x120",
+      "type": "image/png"
+    },
+    {
+      "src": "/scorer/icon_96x96.b64eedf3e80bdde8d9c5718bb3a20a39.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "/scorer/icon_72x72.8d64b531dfee943f3d9e86faae044046.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    }
+  ],
+  "name": "CUAUV RoboSub 2018 Scorer",
+  "short_name": "Scorer",
+  "orientation": "portrait",
+  "display": "standalone",
+  "start_url": ".",
+  "description": "Quickly tally scores for RoboSub 2018!",
+  "background_color": "#fafafa",
+  "theme_color": "#b1624d"
+}
