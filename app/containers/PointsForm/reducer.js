@@ -7,7 +7,7 @@
 import { fromJS } from 'immutable';
 import _ from 'lodash';
 
-import { TOGGLE_ACTION, fields } from './constants';
+import { TOGGLE_ACTION, fields, SELECT_ACTION } from './constants';
 
 export const initialState = fromJS(
   _(fields)
@@ -17,6 +17,10 @@ export const initialState = fromJS(
       switch (field.type) {
         case 'toggle':
           defaultValue = false;
+          break;
+
+        case 'radio':
+          defaultValue = field.values[0].id;
           break;
 
         default:
@@ -33,6 +37,10 @@ function pointsFormReducer(state = initialState, action) {
   switch (action.type) {
     case TOGGLE_ACTION:
       return state.update(action.id, checked => !checked);
+
+    case SELECT_ACTION:
+      return state.update(action.id, () => action.value);
+
     default:
       return state;
   }

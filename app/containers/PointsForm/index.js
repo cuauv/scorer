@@ -12,10 +12,11 @@ import { compose } from 'redux';
 import _ from 'lodash';
 
 import injectReducer from 'utils/injectReducer';
+import RadioGroup from 'components/RadioGroup';
 import ToggleSlider from 'components/ToggleSlider';
 import makeSelectPointsForm from './selectors';
 import reducer from './reducer';
-import { toggleAction } from './actions';
+import { toggleAction, selectAction } from './actions';
 import { fields } from './constants';
 
 function totalPoints(pointsform) {
@@ -27,6 +28,9 @@ function totalPoints(pointsform) {
       switch (field.type) {
         case 'toggle':
           return total + (value ? field.points : 0);
+
+        case 'radio':
+          return total + _.find(field.values, opt => opt.id === value).points;
 
         default:
           return -1000000;
@@ -42,23 +46,45 @@ function PointsForm(props) {
       case 'toggle':
         return (
           <div className="grid-x grid-padding-x" key={field.id}>
-            <div className="cell small-6">
+            <div className="cell small-2">
               <label className="text-right" htmlFor={field.id}>
                 {`${field.label} (${field.points})`}
               </label>
             </div>
-            <div className="cell small-6">
+            <div className="cell auto">
               <ToggleSlider
                 value={props.pointsform[field.id]}
                 label={`${field.label} (${field.points})`}
                 name={field.id}
                 offLabel="0"
                 onLabel={field.points}
-                onChange={() => props.dispatch(toggleAction(field.id))}
+                onToggle={() => props.dispatch(toggleAction(field.id))}
               />
             </div>
           </div>
         );
+
+      case 'radio':
+        return (
+          <div className="grid-x grid-padding-x" key={field.id}>
+            <div className="cell small-2">
+              <label className="text-right" htmlFor={field.id}>
+                {field.label}
+              </label>
+            </div>
+            <div className="cell auto">
+              <RadioGroup
+                values={field.values}
+                selected={props.pointsform[field.id]}
+                name={field.id}
+                onSelect={value =>
+                  props.dispatch(selectAction(field.id, value))
+                }
+              />
+            </div>
+          </div>
+        );
+
       default:
         return `Unknown element type ${field.type}`;
     }

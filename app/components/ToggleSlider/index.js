@@ -17,7 +17,7 @@ function ToggleSlider(props) {
         type="checkbox"
         name={props.name}
         checked={props.value}
-        onChange={evt => props.onChange(!evt.target.value)}
+        onChange={evt => props.onToggle(!evt.target.value)}
       />
       <label className="switch-paddle" htmlFor={props.name}>
         <span className="show-for-sr">{props.label}</span>
@@ -38,7 +38,7 @@ ToggleSlider.propTypes = {
   label: PropTypes.string.isRequired,
   onLabel: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   offLabel: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  onChange: PropTypes.func.isRequired,
+  onToggle: PropTypes.func.isRequired,
 };
 
 export default ToggleSlider;
