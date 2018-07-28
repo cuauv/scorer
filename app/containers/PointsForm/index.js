@@ -33,7 +33,7 @@ function totalPoints(pointsform) {
           return total + _.find(field.values, opt => opt.id === value).points;
 
         default:
-          throw `Unknown type ${field.type} when calculating points`;
+          throw new Error(`Unknown type ${field.type} when calculating points`);
       }
     },
     0,
