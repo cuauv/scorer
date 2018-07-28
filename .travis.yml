@@ -37,6 +37,7 @@ deploy:
   keep-history: true
   on:
     branch: master
+    node: '9'
 
 cache:
   yarn: true
