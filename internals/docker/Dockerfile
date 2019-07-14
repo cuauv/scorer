@@ -1,6 +1,6 @@
 FROM node:10-slim
 
-RUN apt -y update && apt -y upgrade && apt -y install libpng12-0 bzip2 autoconf git
+RUN apt -y update && apt -y upgrade && apt -y install libpng-dev make gcc bzip2 autoconf git
 
 WORKDIR /code
 
